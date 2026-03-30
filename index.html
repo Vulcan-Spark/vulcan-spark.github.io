@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oluwapelumi Solagbade | Physician-Scientist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf9f7;
+      --surface: #ffffff;
+      --surface-2: #f4f2ee;
+      --border: #e8e4dd;
+      --text: #1a1814;
+      --text-muted: #6b6560;
+      --text-light: #9a948e;
+      --accent: #1a3a6b;
+      --accent-warm: #b85c1a;
+      --accent-green: #2d6a4f;
+      --accent-light: #e8eef6;
+      --link: #1a3a6b;
+      --tag-bg: #eef2f9;
+      --tag-text: #1a3a6b;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 16px rgba(0,0,0,0.10);
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,249,247,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+    .nav-brand {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 0.2rem; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.87rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover { background: var(--surface-2); color: var(--text); }
+    .nav-links a.active { color: var(--accent); background: var(--accent-light); }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 980px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── HERO / PROFILE ── */
+    .profile-section {
+      padding: 4rem 0 3rem;
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .profile-photo-wrap {
+      position: relative;
+      width: 180px;
+    }
+    .profile-photo {
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .profile-status {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: #e8f5e9; color: #2d6a4f;
+      font-size: 0.75rem; font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      margin-top: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #2d6a4f; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+    .profile-info h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+    .profile-title {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+      font-weight: 400;
+    }
+    .profile-affil {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.1rem;
+    }
+    .profile-bio {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      line-height: 1.7;
+      max-width: 620px;
+      margin-bottom: 1.4rem;
+    }
+    .profile-links {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .profile-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      text-decoration: none;
+      font-size: 0.82rem; font-weight: 500;
+      padding: 0.35rem 0.8rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+      background: var(--surface);
+      transition: all 0.15s;
+    }
+    .profile-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .profile-link svg { width: 15px; height: 15px; }
+
+    /* ── RESEARCH INTERESTS ── */
+    .interests-strip {
+      background: var(--accent);
+      color: white;
+      padding: 1.4rem 0;
+      margin: 0 0 3rem;
+    }
+    .interests-strip .container { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+    .interests-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.7; white-space: nowrap; }
+    .interest-pill {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      font-size: 0.82rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-weight: 400;
+    }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 4rem; }
+    .section-header {
+      display: flex; align-items: baseline; gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .section-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .section-count {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── NEWS ── */
+    .news-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+    .news-text {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .news-text strong { color: var(--text); font-weight: 500; }
+    .news-text a { color: var(--link); text-decoration: none; }
+    .news-text a:hover { text-decoration: underline; }
+    .news-badge {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 600;
+      padding: 0.1rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .badge-award { background: #fff3e0; color: #e65100; }
+    .badge-pub { background: #e8f5e9; color: #2d6a4f; }
+    .badge-talk { background: #e3f2fd; color: #1565c0; }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .pub-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      transition: box-shadow 0.15s, border-color 0.15s;
+      position: relative;
+    }
+    .pub-card:hover { box-shadow: var(--shadow-hover); border-color: #d0ccC4; }
+    .pub-venue-tag {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.15rem 0.55rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+    }
+    .venue-published { background: var(--accent-light); color: var(--accent); }
+    .venue-review { background: #fff3e0; color: #c15a00; }
+    .venue-ongoing { background: #f3e5f5; color: #7b1fa2; }
+
+    .pub-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
+    }
+    .pub-authors {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+    .pub-authors .me { font-weight: 600; color: var(--text); }
+    .pub-journal {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .pub-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .pub-link {
+      font-size: 0.75rem; font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.12s;
+    }
+    .pub-link-doi { background: #e8eef6; color: var(--accent); }
+    .pub-link-doi:hover { background: #d0dcf0; }
+    .pub-link-pdf { background: #fce4ec; color: #c62828; }
+    .pub-link-code { background: #e8f5e9; color: #2d6a4f; }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem 1rem;
+      align-items: start;
+    }
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.93rem;
+      color: var(--text);
+      margin-bottom: 0.1rem;
+    }
+    .exp-org {
+      font-size: 0.87rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+    .exp-desc {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      grid-column: 1 / -1;
+    }
+    .exp-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+
+    /* ── AWARDS ── */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.8rem;
+    }
+    .award-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.9rem 1.1rem;
+      transition: box-shadow 0.15s;
+    }
+    .award-card:hover { box-shadow: var(--shadow-hover); }
+    .award-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+      line-height: 1.35;
+    }
+    .award-meta {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .award-amount {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-warm);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+    }
+    .skill-group-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .skill-tag {
+      font-size: 0.75rem;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+    }
+    .edu-degree {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .edu-school { font-weight: 600; color: var(--accent); font-size: 0.92rem; margin-bottom: 0.2rem; }
+    .edu-meta { font-size: 0.83rem; color: var(--text-muted); }
+    .edu-highlight {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.78rem; font-weight: 600;
+      padding: 0.2rem 0.65rem; border-radius: 4px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── TABS ── */
+    .tab-bar { display: flex; gap: 0.2rem; margin-bottom: 1.5rem; }
+    .tab-btn {
+      padding: 0.4rem 1rem;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      border-radius: 6px;
+      font-size: 0.83rem; font-weight: 500;
+      cursor: pointer; color: var(--text-muted);
+      transition: all 0.12s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .tab-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+    .tab-btn:hover:not(.active) { background: var(--surface-2); color: var(--text); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .profile-section { grid-template-columns: 1fr; gap: 1.5rem; }
+      .profile-photo-wrap { display: flex; flex-direction: column; align-items: center; }
+      nav { padding: 0 1rem; }
+      .nav-links a { padding: 0.3rem 0.5rem; font-size: 0.8rem; }
+      .container { padding: 0 1.1rem; }
+    }
+
+    /* ── SHOW MORE ── */
+    .show-more-btn {
+      display: block; width: 100%; margin-top: 0.8rem;
+      padding: 0.55rem;
+      background: transparent; border: 1.5px dashed var(--border);
+      border-radius: var(--radius);
+      color: var(--text-muted); font-size: 0.83rem; font-weight: 500;
+      cursor: pointer; transition: all 0.15s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .show-more-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .collapsible { display: none; }
+    .collapsible.open { display: flex; flex-direction: column; gap: 0.8rem; }
+
+    /* anchor offset for nav */
+    [id] { scroll-margin-top: 70px; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <a href="#" class="nav-brand">Oluwapelumi Solagbade</a>
+  <div class="nav-links">
+    <a href="#about" class="active">About</a>
+    <a href="#news">News</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Awards</a>
+    <a href="#cv">CV</a>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
+<main>
+  <div class="container">
+
+    <!-- PROFILE -->
+    <section class="profile-section" id="about">
+      <div class="profile-photo-wrap">
+        <img src="assets/img/profile.jpeg" alt="Oluwapelumi Solagbade" class="profile-photo">
+        <div class="profile-status">
+          <span class="status-dot"></span> Open to collaborations
+        </div>
+      </div>
+      <div class="profile-info">
+        <h1>Oluwapelumi Solagbade</h1>
+        <p class="profile-title">Aspiring Physician-Scientist · Computational Neuroscientist</p>
+        <p class="profile-affil">
+          MBChB Student, Obafemi Awolowo University &nbsp;·&nbsp;
+          Research Fellow, DTH-Lab, University of Geneva
+        </p>
+        <p class="profile-bio">
+          I am an aspiring physician-scientist dedicated to bridging the gap between clinical neurology and basic science.
+          My work leverages <strong>spatial transcriptomics</strong>, <strong>high-dimensional data analysis</strong>, and
+          <strong>computational modeling</strong> to decode the cellular and molecular mechanisms of neurodegenerative diseases.
+          I am also deeply committed to advancing neuroscience education and research in Africa through community initiatives.
+        </p>
+        <div class="profile-links">
+          <a href="mailto:solagbadepelumi@gmail.com" class="profile-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a href="https://github.com/Vulcan-Spark" target="_blank" class="profile-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/oluwapelumi-solagbade" target="_blank" class="profile-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://orcid.org/0009-0005-7748-356X" target="_blank" class="profile-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.977 5.38h1.86v1.742H9.023zm0 3.48h1.86v9.782H9.023zm3.64 0h4.95c4.7 0 4.7 9.782 0 9.782h-4.95V8.86zm1.86 1.742v6.298h3.09c2.84 0 2.84-6.298 0-6.298h-3.09z"/></svg>
+            ORCID
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- RESEARCH INTERESTS STRIP -->
+  <div class="interests-strip">
+    <div class="container">
+      <span class="interests-label">Research Interests</span>
+      <span class="interest-pill">Spatial Transcriptomics</span>
+      <span class="interest-pill">Computational Neuroscience</span>
+      <span class="interest-pill">Neurodegeneration</span>
+      <span class="interest-pill">Neuroimaging</span>
+      <span class="interest-pill">Digital Health Policy</span>
+      <span class="interest-pill">Brain–Computer Interfaces</span>
+      <span class="interest-pill">EEG &amp; Neural Coding</span>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- NEWS -->
+    <section class="section" id="news">
+      <div class="section-header">
+        <h2 class="section-title">News</h2>
+        <span class="section-count">latest updates</span>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">2026</span>
+          <span class="news-text"><strong>IBRO-RIKEN CBS Award Grant</strong> recipient. <span class="news-badge badge-award">🏆 Award</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026</span>
+          <span class="news-text">Received the <strong>COSYNE New Attendee Travel Grant</strong> ($1,500). <span class="news-badge badge-award">🏆 Award</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026</span>
+          <span class="news-text">Selected for <strong>Scuola Normale Superiore "Neural Circuits of Behavior"</strong>, Pisa, Italy (€250 award).</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026</span>
+          <span class="news-text">Published: <em>Healthy digital diets: A review of existing guidelines for young people's technology use.</em> DTH-Lab, University of Geneva. <span class="news-badge badge-pub">📄 Paper</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025</span>
+          <span class="news-text">Published in <strong>Chinese Neurosurgical Journal</strong>: <em>Addressing the deficit in chronic traumatic encephalopathy research in Africa.</em> <span class="news-badge badge-pub">📄 Paper</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025</span>
+          <span class="news-text">Published in <strong>Discover Medicine</strong>: Endovascular techniques in Moyamoya disease management. <span class="news-badge badge-pub">📄 Paper</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025</span>
+          <span class="news-text"><strong>Kerry Murphy Healey Global Surgery Slingshot Fellowship</strong> — one of 20 innovators selected worldwide, Babson College, USA. <span class="news-badge badge-award">🏆 Award</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025</span>
+          <span class="news-text">3rd Place Oral Presentation, <strong>AfInMic International Post-graduate Student Symposium 2025</strong>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025</span>
+          <span class="news-text">Research Fellow at <strong>Digital Transformations for Health Lab (DTH-Lab)</strong>, University of Geneva — among 8 selected from 1,000+ applicants ($2,500 stipend). <span class="news-badge badge-award">🏆 Award</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025</span>
+          <span class="news-text">Research Assistant (Neuroinformatics) at <strong>Pestilli Lab, University of Texas at Austin</strong>. <span class="news-badge badge-talk">🔬 Position</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2025</span>
+          <span class="news-text">First Place, <strong>Nigeria Undergraduate Challenge Your Brain Quiz</strong>.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2024</span>
+          <span class="news-text">Co-Founded <strong>NeuroAspire Initiative</strong> — neuroscience education program empowering 200+ students across Nigeria.</span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2024</span>
+          <span class="news-text"><strong>Wells Mountain Initiative (WMI)</strong> Merit-Based Scholarship ($3,000) — 1 of 102 students from 55 countries. <span class="news-badge badge-award">🏆 Award</span></span>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2023</span>
+          <span class="news-text">Began MBChB at <strong>Obafemi Awolowo University</strong> — Premedical CGPA 4.84/5.0. Top 0.24% among 1.9M+ UTME candidates.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH EXPERIENCE -->
+    <section class="section" id="research">
+      <div class="section-header">
+        <h2 class="section-title">Research Experience</h2>
+        <span class="section-count">7 positions</span>
+      </div>
+      <div class="exp-list">
+
+        <div class="exp-card">
+          <div>
+            <div class="exp-role">Research Assistant (Neuroinformatics)</div>
+            <div class="exp-org">Pestilli Lab · University of Texas at Austin</div>
+          </div>
+          <div class="exp-period">Jun 2025 – Present</div>
+          <div class="exp-desc">
+            Executed BIDS-standard neuroimaging preprocessing for EDSD and ASPIRE datasets using FSL on NeuroDesk.
+            Developed custom Python scripts to automate statistical log extraction, mitigating cloud storage latency issues in low-resource settings.
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div>
+            <div class="exp-role">Research Fellow</div>
+            <div class="exp-org">Digital Transformations for Health Lab (DTH-Lab) · University of Geneva, Switzerland (Remote)</div>
+          </div>
+          <div class="exp-period">May 2025 – Present</div>
+          <div class="exp-desc">
+            Conducting policy-oriented desk review and thematic analysis of global guidelines on digital technology use in youth.
+            Applying the READ approach and Amy Orben's digital diet framework. Utilising NVivo for qualitative coding and Zotero for literature management.
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div>
+            <div class="exp-role">Student Researcher</div>
+            <div class="exp-org">Applied AI and Robotics Lab · Obafemi Awolowo University</div>
+          </div>
+          <div class="exp-period">Jun 2025 – Present</div>
+          <div class="exp-desc">
+            Projects: Open-Access EEG Dataset from Indigenous African Populations for Schizophrenia Research; Mismatch Negativity as EEG measure for Schizophrenia diagnosis.
+            Assisting in neural data collection, clinical assessments (WHODAS, PANSS, Mini 4.0), and integrating behavioral and neural data.
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div>
+            <div class="exp-role">Student Researcher</div>
+            <div class="exp-org">Medical AI Laboratory (MAILAB) · Lagos, Nigeria — CONNexin Program</div>
+          </div>
+          <div class="exp-period">Aug 2025 – Present</div>
+          <div class="exp-desc">
+            Longitudinal Analysis of Cortical and Subcortical Volumes in the Prevent-AD Dataset.
+            Investigating structural brain changes in preclinical Alzheimer's disease using FreeSurfer, FSL, MRIQC, and Python-based workflows within an 8-member interdisciplinary African team.
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div>
+            <div class="exp-role">Student Researcher</div>
+            <div class="exp-org">Laboratory of Experimental and Translational Neurobiology (LETNeu) · University of Medical Science, Nigeria</div>
+          </div>
+          <div class="exp-period">Sep – Oct 2025</div>
+          <div class="exp-desc">
+            Investigated gene–environment interactions in neurodevelopmental disorders and oxidative mechanisms in heavy-metal-induced neurotoxicity using <em>C. elegans</em> models.
+            Independently initiated an automated multi-worm counting project using OpenCV with Kalman filter and Hungarian assignment for behavioral neurotoxicity experiments.
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div>
+            <div class="exp-role">Trainee — Computational Neuroscience Track</div>
+            <div class="exp-org">Neuromatch Academy</div>
+          </div>
+          <div class="exp-period">Jul 2025</div>
+          <div class="exp-desc">
+            Project: Decoding Licking Behavior in Mice from Sparse Neural Population Activity.
+            Developed neuron models (LIF, Hodgkin–Huxley), analyzed two-photon calcium imaging data, and applied ML models (logistic regression, SVM, CNN) for behavioral decoding.
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div>
+            <div class="exp-role">Research Lead</div>
+            <div class="exp-org">Mission BRAIN Neurosurgery Research Fellowship · Nigeria</div>
+          </div>
+          <div class="exp-period">Oct 2023 – Aug 2025</div>
+          <div class="exp-desc">
+            Led a team of 9 researchers conducting systematic reviews and meta-analyses on neurosurgical topics in Africa.
+            Developed PRISMA-guided protocols, critically appraised 7+ peer-reviewed articles, and addressed gaps in surgical access, outcomes, and innovation in the African context.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="section" id="publications">
+      <div class="section-header">
+        <h2 class="section-title">Publications</h2>
+        <span class="section-count">4 published · 3 under review</span>
+      </div>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('all')">All</button>
+        <button class="tab-btn" onclick="switchTab('published')">Published</button>
+        <button class="tab-btn" onclick="switchTab('review')">Under Review</button>
+      </div>
+
+      <div id="tab-all" class="tab-content active">
+        <div class="pub-list">
+
+          <div class="pub-card" data-status="published">
+            <span class="pub-venue-tag venue-published">Published · 2026</span>
+            <div class="pub-title">Healthy digital diets: A review of existing guidelines for young people's technology use</div>
+            <div class="pub-authors"><span class="me">Solagbade, O. S.</span></div>
+            <div class="pub-journal">Digital Transformations for Health Lab (DTH-Lab), University of Geneva, 2026</div>
+            <div class="pub-links">
+              <a href="#" class="pub-link pub-link-doi">Link</a>
+            </div>
+          </div>
+
+          <div class="pub-card" data-status="published">
+            <span class="pub-venue-tag venue-published">Published · 2025</span>
+            <div class="pub-title">Addressing the deficit in chronic traumatic encephalopathy research in Africa: A call for urgent attention</div>
+            <div class="pub-authors">Muili, A.O., Alare, K., <span class="me">Oluwapelumi Solagbade</span>, et al.</div>
+            <div class="pub-journal">Chinese Neurosurgical Journal, 11(2), 2025</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1186/s41016-025-00388-5" target="_blank" class="pub-link pub-link-doi">DOI</a>
+            </div>
+          </div>
+
+          <div class="pub-card" data-status="published">
+            <span class="pub-venue-tag venue-published">Published · 2025</span>
+            <div class="pub-title">Endovascular techniques in the management of Moyamoya disease: A comprehensive review of current therapeutic options</div>
+            <div class="pub-authors">Muili, A.O., <span class="me">Oluwapelumi Solagbade</span>, Wambu, P.N., Waweru, J., et al.</div>
+            <div class="pub-journal">Discover Medicine, 2(21), 2025</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.1007/s44337-025-00217-9" target="_blank" class="pub-link pub-link-doi">DOI</a>
+            </div>
+          </div>
+
+          <div class="pub-card" data-status="published">
+            <span class="pub-venue-tag venue-published">Published · 2024</span>
+            <div class="pub-title">Building Inclusive Communities: Enhancing Support and Awareness for Autism Spectrum Disorder in Nigeria</div>
+            <div class="pub-authors"><span class="me">Solagbade, O.</span></div>
+            <div class="pub-journal">EOHealth, June 2024</div>
+          </div>
+
+          <div class="pub-card" data-status="review">
+            <span class="pub-venue-tag venue-review">Under Review</span>
+            <div class="pub-title">Robotic Interventions in Hydrocephalus Management: A Comprehensive Review of Innovations, Applications, and Future Directions</div>
+            <div class="pub-authors">et al. (Manuscript ID: WNS-24-4809)</div>
+            <div class="pub-journal">Submitted to World Neurosurgery</div>
+          </div>
+
+          <div class="pub-card" data-status="review">
+            <span class="pub-venue-tag venue-review">Under Review</span>
+            <div class="pub-title">The Genomic Gap in Neuro-Oncology: A Narrative Review of Brain Tumour Molecular Data from Africa</div>
+            <div class="pub-authors">Lawal SO, Daniel JOI, Acheampong B, <span class="me">Solagbade OS</span>, et al.</div>
+            <div class="pub-journal">Submitted to The Egyptian Journal of Neurology, Psychiatry and Neurosurgery</div>
+          </div>
+
+          <div class="pub-card" data-status="review">
+            <span class="pub-venue-tag venue-review">Under Review</span>
+            <div class="pub-title">Challenges Faced by Neurosurgeons and Its Effects on Students' Career Choices: A Comprehensive Review</div>
+            <div class="pub-authors">Wambu PN, Ouma RO, <span class="me">Solagbade OS</span>, Ajayi WA, et al.</div>
+            <div class="pub-journal">Under review</div>
+          </div>
+
+          <div class="pub-card" data-status="ongoing">
+            <span class="pub-venue-tag venue-ongoing">Ongoing · Conference Abstract</span>
+            <div class="pub-title">Computational Pipeline for High-Resolution Spatial Mapping of the Glial Neurogenic Niche in the Mouse Hippocampus (MERFISH Analysis)</div>
+            <div class="pub-authors"><span class="me">Solagbade, O. S.</span> &amp; Yusuf, J. A.</div>
+            <div class="pub-journal">AfInMic 2025 International Student Microscopy Symposium · Zenodo</div>
+            <div class="pub-links">
+              <a href="https://doi.org/10.5281/zenodo.17778234" target="_blank" class="pub-link pub-link-doi">Zenodo</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="tab-published" class="tab-content">
+        <div class="pub-list" id="pub-published"></div>
+      </div>
+      <div id="tab-review" class="tab-content">
+        <div class="pub-list" id="pub-review"></div>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section class="section" id="awards">
+      <div class="section-header">
+        <h2 class="section-title">Awards &amp; Honors</h2>
+        <span class="section-count">20+ recognitions</span>
+      </div>
+
+      <div class="awards-grid" id="awards-visible">
+        <div class="award-card">
+          <div class="award-name">IBRO-RIKEN CBS Award Grant</div>
+          <div class="award-meta">2026</div>
+        </div>
+        <div class="award-card">
+          <div class="award-name">COSYNE New Attendee Travel Grant</div>
+          <div class="award-amount">$1,500</div>
+          <div class="award-meta">2026</div>
+        </div>
+        <div class="award-card">
+          <div class="award-name">Katwig Kare Foundation Scholarship</div>
+          <div class="award-meta">2026</div>
+        </div>
+        <div class="award-card">
+          <div class="award-name">GIAA Dallas Scholarship</div>
+          <div class="award-meta">2026</div>
+        </div>
+        <div class="award-card">
+          <div class="award-name">Kerry Murphy Healey Global Surgery Slingshot Fellowship</div>
+          <div class="award-meta">Babson College, USA · 1 of 20 worldwide · 2025</div>
+        </div>
+        <div class="award-card">
+          <div class="award-name">DTH-Lab Research Stipend</div>
+          <div class="award-amount">$2,500</div>
+          <div class="award-meta">University of Geneva · 8/1000+ applicants · 2025</div>
+        </div>
+        <div class="award-card">
+          <div class="award-name">Wells Mountain Initiative Merit Scholarship</div>
+          <div class="award-amount">$3,000</div>
+          <div class="award-meta">1 of 102 from 55 countries · Vermont, USA · 2024–2029</div>
+        </div>
+        <div class="award-card">
+          <div class="award-name">Jim Ovia Scholarship</div>
+          <div class="award-amount">$1,300</div>
+          <div class="award-meta">2025</div>
+        </div>
+      </div>
+
+      <div class="collapsible" id="awards-extra">
+        <div class="awards-grid" style="margin-top:0.8rem">
+          <div class="award-card">
+            <div class="award-name">Lewis-Nguyen Scholarship — Columbia University IYRC</div>
+            <div class="award-amount">$1,250 full fee-waived</div>
+            <div class="award-meta">2025</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">Cyfed-Bradley Hope Undergraduate Scholarship</div>
+            <div class="award-amount">$400</div>
+            <div class="award-meta">2025</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">Cajal Experimental Neuroscience Bootcamp</div>
+            <div class="award-amount">£2,000 full fee-waived</div>
+            <div class="award-meta">2024</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">Genomac Institute International Internship in Bioinformatics &amp; Genomics</div>
+            <div class="award-amount">$1,000</div>
+            <div class="award-meta">2024</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">Ola Adediwura Foundation Scholarship</div>
+            <div class="award-amount">$770</div>
+            <div class="award-meta">2023</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">IG Aguiwo Health and Education Scholarship</div>
+            <div class="award-amount">$950</div>
+            <div class="award-meta">2024</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">Jim Leeach Mastercard Fellow</div>
+            <div class="award-meta">2024</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">3rd Place – AfInMic International Post-graduate Symposium</div>
+            <div class="award-meta">Oral Presentation · 2025</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">1st Place – Nigeria Undergraduate Challenge Your Brain Quiz</div>
+            <div class="award-meta">2025</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">2nd Runner-Up – IYNA-Alzheimer's Association International Ideathon</div>
+            <div class="award-amount">$250</div>
+            <div class="award-meta">2025</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">Top 0.24% – UTME (1.9M+ candidates)</div>
+            <div class="award-meta">2022</div>
+          </div>
+          <div class="award-card">
+            <div class="award-name">Halcyon Scholarship</div>
+            <div class="award-meta">2024</div>
+          </div>
+        </div>
+      </div>
+      <button class="show-more-btn" id="awards-btn" onclick="toggleMore('awards-extra','awards-btn')">Show all awards ↓</button>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <div class="section-header">
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor of Medicine, Bachelor of Surgery (MBChB)</div>
+        <div class="edu-school">Obafemi Awolowo University, Ile Ife, Nigeria</div>
+        <div class="edu-meta">October 2023 – Expected 2029</div>
+        <span class="edu-highlight">Premedical CGPA: 4.84 / 5.0</span>
+        <span class="edu-highlight" style="margin-left:0.4rem;background:#e8f5e9;color:#2d6a4f;">Distinction in Physiology</span>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="section-header">
+        <h2 class="section-title">Skills &amp; Methods</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Programming</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">Bash/Linux</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Python Libraries</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">SciPy</span>
+            <span class="skill-tag">OpenCV</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Bioinformatics</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Scanpy</span>
+            <span class="skill-tag">Squidpy</span>
+            <span class="skill-tag">Galaxy</span>
+            <span class="skill-tag">ClinVar</span>
+            <span class="skill-tag">gnomAD</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Neuroimaging</div>
+          <div class="skill-tags">
+            <span class="skill-tag">FreeSurfer</span>
+            <span class="skill-tag">FSL</span>
+            <span class="skill-tag">MRIQC</span>
+            <span class="skill-tag">MNE-Python</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Qualitative</div>
+          <div class="skill-tags">
+            <span class="skill-tag">NVivo</span>
+            <span class="skill-tag">Zotero</span>
+            <span class="skill-tag">SPSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Wet Lab</div>
+          <div class="skill-tags">
+            <span class="skill-tag">IHC</span>
+            <span class="skill-tag">C. elegans culture</span>
+            <span class="skill-tag">Rodent dissection</span>
+            <span class="skill-tag">PCR</span>
+            <span class="skill-tag">Gel Electrophoresis</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Behavioral Assays</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Morris Water Maze</span>
+            <span class="skill-tag">Y-Maze</span>
+            <span class="skill-tag">Open Field</span>
+            <span class="skill-tag">ANY-Maze</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Data Analysis</div>
+          <div class="skill-tags">
+            <span class="skill-tag">GraphPad Prism</span>
+            <span class="skill-tag">ggplot2</span>
+            <span class="skill-tag">dplyr</span>
+            <span class="skill-tag">BIDS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV SECTION -->
+    <section class="section" id="cv">
+      <div class="section-header">
+        <h2 class="section-title">Curriculum Vitae</h2>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:0.8rem;">📄</div>
+        <p style="color:var(--text-muted);margin-bottom:1.2rem;font-size:0.92rem;">Download the full CV for a complete record of research experience, publications, and achievements.</p>
+        <a href="assets/cv.pdf" download style="
+          display:inline-flex;align-items:center;gap:0.5rem;
+          background:var(--accent);color:white;
+          padding:0.65rem 1.5rem;border-radius:7px;
+          text-decoration:none;font-weight:600;font-size:0.9rem;
+          transition:background 0.15s;
+        " onmouseover="this.style.background='#12285a'" onmouseout="this.style.background='var(--accent)'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV (PDF)
+        </a>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 Oluwapelumi Solagbade &nbsp;·&nbsp; Ile Ife, Osun, Nigeria
+    &nbsp;·&nbsp; <a href="mailto:solagbadepelumi@gmail.com">solagbadepelumi@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+  // NAV active state on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+
+  // Publication tabs
+  function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    if (name === 'all') {
+      document.getElementById('tab-all').classList.add('active');
+    } else if (name === 'published') {
+      const c = document.getElementById('pub-published');
+      c.innerHTML = '';
+      document.querySelectorAll('[data-status="published"]').forEach(el => c.appendChild(el.cloneNode(true)));
+      document.getElementById('tab-published').classList.add('active');
+    } else {
+      const c = document.getElementById('pub-review');
+      c.innerHTML = '';
+      document.querySelectorAll('[data-status="review"], [data-status="ongoing"]').forEach(el => c.appendChild(el.cloneNode(true)));
+      document.getElementById('tab-review').classList.add('active');
+    }
+  }
+
+  // Show more toggle
+  function toggleMore(id, btnId) {
+    const el = document.getElementById(id);
+    const btn = document.getElementById(btnId);
+    if (el.classList.contains('open')) {
+      el.classList.remove('open');
+      btn.textContent = 'Show all awards ↓';
+    } else {
+      el.classList.add('open');
+      btn.textContent = 'Show fewer ↑';
+    }
+  }
+</script>
+</body>
+</html>
